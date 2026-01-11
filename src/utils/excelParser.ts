@@ -34,7 +34,7 @@ export async function parseExcelFile(file: File): Promise<BrandData> {
         const sheet = workbook.Sheets[sheetName];
 
         // 转换为JSON数组
-        const jsonData = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, {
+        const jsonData = XLSX.utils.sheet_to_json(sheet, {
           header: 1,
           defval: ''
         }) as unknown[][];
